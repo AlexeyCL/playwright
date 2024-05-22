@@ -1,13 +1,14 @@
 import { test, expect } from '@playwright/test';
+import {auth} from "../fixtures/auth";
 
-test('has title', async ({ page }) => {
+auth('has title', async ({ page }) => {
   await page.goto('https://playwright.dev/');
 
   // Expect a title "to contain" a substring.
   await expect(page).toHaveTitle(/Playwright/);
 });
 
-test('get started link', async ({ page }) => {
+auth('get started link', async ({ page }) => {
   await page.goto('https://playwright.dev/');
 
   // Click the get started link.
